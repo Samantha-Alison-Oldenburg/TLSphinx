@@ -173,10 +173,10 @@ open class Decoder {
 
         engine = AVAudioEngine()
 
-        guard let input = engine.inputNode else {
+        let input = engine.inputNode /*else {
             print("Can't get input node")
             return
-        }
+        }*/
 
         let formatIn = AVAudioFormat(commonFormat: .pcmFormatInt16, sampleRate: 44100, channels: 1, interleaved: false)
         engine.connect(input, to: engine.outputNode, format: formatIn)
